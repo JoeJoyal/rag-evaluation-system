@@ -1,7 +1,7 @@
-from rag1.agents import ask
+from agents import ask
 import json
 
-with open("eval_dataset.jsonl", "r", encoding="utf-8") as file:
+with open("rag1\eval_dataset.jsonl", "r", encoding="utf-8") as file:
     test_cases = [json.loads(line) for line in file]
 
     results = []
@@ -15,14 +15,14 @@ with open("eval_dataset.jsonl", "r", encoding="utf-8") as file:
 
         rag_result = ask(question)
 
-        results ={
+        result ={
             "question": question,
             "expected_answer": expected_answer,
             "actual_answer": rag_result["answer"],
             "context": rag_result["context"]
         }
 
-        results.append(results)
+        results.append(result)
         print(f"Answer: {rag_result['answer']}")
 
 with open("results_1.jsonl", "w", encoding="utf-8") as file:
