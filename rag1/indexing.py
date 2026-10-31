@@ -30,8 +30,8 @@ vector_store.add_texts(texts=chunks)
 print(f"indexed {len(chunks)} chunks")
 
 # Test similarity search
-results = vector_store.similarity_search("What is Joe's Python experience?", k=3)
+# results = vector_store.similarity_search("What is Joe's Python experience?", k=3)
 
 # Display retrieved results
-for result in results:
-    print(result.page_content)
+# for result in results:
+#     print(result.page_content)
