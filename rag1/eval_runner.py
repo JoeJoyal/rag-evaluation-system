@@ -1,5 +1,8 @@
-from agents import ask
+import os
 import json
+from agents import ask
+
+
 
 with open("rag1\eval_dataset.jsonl", "r", encoding="utf-8") as file:
     test_cases = [json.loads(line) for line in file]
